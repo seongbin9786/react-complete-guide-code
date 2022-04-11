@@ -16,3 +16,13 @@
   font: inherit;
   padding-left: 0.5rem;
 }
+
+.light label {
+  color: black;
+  transition: color 150ms linear;
+}
+
+.dark label {
+  color: white;
+  transition: color 150ms linear;
+}

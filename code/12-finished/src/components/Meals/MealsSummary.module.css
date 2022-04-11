@@ -5,11 +5,21 @@
   margin: auto;
   margin-top: -10rem;
   position: relative;
-  background-color: #383838;
-  color: white;
   border-radius: 14px;
   padding: 1rem;
   box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+}
+
+.light {
+  background-color: #ededed;
+  color: #444;    
+  transition: background-color 150ms linear;
+}
+
+.dark {
+  background-color: #444;
+  color: #ededed;
+  transition: background-color 150ms linear;
 }
 
 .summary h2 {

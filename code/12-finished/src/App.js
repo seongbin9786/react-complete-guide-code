@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import Header from './components/Layout/Header';
 import Meals from './components/Meals/Meals';
 import Cart from './components/Cart/Cart';
-import CartProvider from './store/CartProvider';
+import ThemeContext from './store/theme-context';
 
 function App() {
+  const { currentTheme } = useContext(ThemeContext);
+
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
@@ -16,14 +18,16 @@ function App() {
     setCartIsShown(false);
   };
 
+  const backgroundColor = currentTheme == 'light' ? '#eee' : '#222';
+
   return (
-    <CartProvider>
+    <div>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
-      <main>
+      <main style={{ backgroundColor }}>
         <Meals />
       </main>
-    </CartProvider>
+    </div>
   );
 }
 
